@@ -1,5 +1,6 @@
 package org.UrlShortener.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.UrlShortener.dtos.request.UrlRequest;
 import org.UrlShortener.dtos.response.UrlResponse;
 import org.UrlShortener.service.UrlService;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
@@ -35,5 +38,6 @@ public class UrlController {
         } catch (Exception exception) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
     }
 }

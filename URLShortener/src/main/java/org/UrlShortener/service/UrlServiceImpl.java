@@ -51,10 +51,9 @@ public class UrlServiceImpl implements UrlService {
         if (urlEntity == null) {
             throw new IllegalArgumentException("Url does not exist");
         }
-        UrlEntity url = urlRepo.findByShortUrl(shortUrl);
         UrlResponse urlResponse = new UrlResponse();
-        urlResponse.setLongUrl(url.getLongUrl());
-        urlResponse.setShortUrl(url.getShortUrl());
+        urlResponse.setLongUrl(urlEntity.getLongUrl());
+        urlResponse.setShortUrl(urlEntity.getShortUrl());
         return urlResponse;
     }
 
